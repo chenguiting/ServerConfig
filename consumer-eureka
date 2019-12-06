@@ -1,0 +1,11 @@
+server.port=9999
+
+#配置服务的名称以及连接注册中心的地址
+spring.application.name=consumer-eureka
+eureka.client.service-url.defaultZone=http://eureka8762:8762/eureka/,http://eureka8763:8763/eureka/
+
+#服务的发现是有eureka客户端实现的，而服务端的真正调用是由ribbon来实现的
+#所以要在调用服务提供者时使用ribbon来调用
+
+#获取服务地址间隔时间，默认30秒
+eureka.client.registry-fetch-interval-seconds=20
